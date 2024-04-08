@@ -57,3 +57,79 @@
     - Choose 'let' and 'const' for clearer variable intentions
     - Understand scoping differences to prevent unexpected behaviour
     - Limit global variables for better code organisation and collaboration
+
+
+# Arrow Functions
+
+* Introduced in ES2015 for concise function declaration
+* Utilise __"=>"__ (fat arrow) syntax
+* Address two main concerns: shorter functions & context binding
+
+* Anatomy
+    __Multiple statement syntax:__
+    ```javascript
+    (parameters) => {
+        statement1;
+        statement2;
+        return value;
+    }
+    ```
+
+    __Single parameter, no parentheses:__
+    ```javascript
+    param => {
+        statement;
+        return value;
+    }
+    ```
+
+    __No parameters, use empty parentheses:__
+    ```javascript
+    () => {
+        statement;
+        return value;
+    }
+    ```
+
+
+* Implicit Returns:
+
+    - Single expression functions allow implicit return
+    ```javascript
+    arg => expression; // same as (arg) => { return expression; }
+    ```
+
+    - Multiple statements require explicit return
+    ```javascript
+    arg => {
+        statement1;
+        statement2;
+        return value;
+    }
+    ```
+
+* Syntactic Ambiguity:
+
+    - '{}' after fat arrow implies empty block
+    - '() => {};' returns undefined
+
+    - to return an empty object, wrap it in parentheses
+    - '() => ({});' returns an object: {}
+
+
+* Anonymous Nature:
+
+    - Arrow functions are anonymous by default
+    - Assign to variables for named functions
+
+    ```javascript
+    const functionName = parameters => {
+        statement;
+    };
+    ```
+
+* Key Takeaways:
+    - Arrow functions offer concise syntax
+    - Implicit return in single expressions
+    - Care needed with context and syntactic amiguity
+    - Useful for shortening code, but remember differences in behaviour
