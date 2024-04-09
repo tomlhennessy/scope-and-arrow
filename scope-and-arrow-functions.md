@@ -133,3 +133,35 @@
     - Implicit return in single expressions
     - Care needed with context and syntactic amiguity
     - Useful for shortening code, but remember differences in behaviour
+
+
+# Closures
+
+Definition: A closure is a combination of a function and the lexical environment within which that function was declared.
+
+Practicality: Closures occur when an inner function accesses or modifies variables in an outer function. They are crucial for creativity, flexibility, and security in JavaScript code.
+
+* Basic Rules
+    - Closures have access to variables within their own scope as well as any outer function's scope when they are declared
+    - Lexical  environment includes variables available within the closure's scope, its outer function's scope, and the global scope
+    - Even after an outer function has returned, an inner function retains access to the outer function's variables
+
+* Example:
+
+```javascript
+function makeAdder(x) {
+    return function(y) {
+        return x + y;
+    };
+}
+
+const add5 = makeAdder(5);
+
+console.log(add5(2)); // prints 7
+```
+
+* Applications:
+    - Private state: use closures to create private variables and functions
+    - Passing arguments implicity: pass arguments down to helper functions without
+
+By understanding closures, you can implement them to control scope effectively and enhance the the functionality and Security of your JavaScript code.
